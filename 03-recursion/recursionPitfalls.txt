@@ -1,0 +1,5 @@
+Common Recursion Pitfalls
+
+1) No base case
+2) returning the wrong thing or forgetting the return statement altogether
+3) stack overflow

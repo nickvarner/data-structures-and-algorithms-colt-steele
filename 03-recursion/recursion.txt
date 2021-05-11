@@ -1,0 +1,8 @@
+What is recursion?
+
+a) A process (a function) which calls itself.
+
+JSON.parse and JSON.stringify
+are recursive functions
+
+ Common for DOM traversal algorithms and object traversal and even more complex data structures

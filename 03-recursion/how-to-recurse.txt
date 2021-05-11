@@ -1,0 +1,58 @@
+How recursive functions work!
+
+they invoke the same function with a different input until you reach your BASE CASE.
+
+There are two important parts of a base case
+!!** B A S E    C A S E **!!
+-The condition when the recursion ends.
+
+!!** DIFFERENT INPUT**!!
+-The recursive call with a different input or piece of data.
+
+// with helper method recursion we have two functions
+
+function outer (input) {
+	let outerScopedVariable = [];
+
+	// this is our recursive function inside that calls itself
+	function helper (helperInput) {
+		helper(helperInput--);
+	}
+
+	helper(input);
+
+	return outerScopedVariable;
+}
+
+// when given an array collect the odds numbers
+
+function collectOddValues (arr) {
+	let result = [];
+	function helper (helperInput) {
+		if (helperInput.length === 0) {
+			return;
+		}
+		if (helperInput[0] % 2 !== 0) {
+			result.push(helperInput[0]);
+		}
+		helperInput.slice(1);
+	}
+	helper(arr);
+	return result;
+}
+
+!!** PURE RECURSION **!!
+
+function collectOddValues(arr) {
+    let newArr = []
+    if(arr.length === 0 ){ 
+        return newArr
+    }
+
+    if(arr[0] % 2 !== 0){
+        newArr.push(arr[0])
+    }
+
+    newArr = newArr.concat(collectOddValues(arr.slice(1)))
+    return newArr
+}
