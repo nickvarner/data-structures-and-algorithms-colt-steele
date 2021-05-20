@@ -1,0 +1,67 @@
+!!** B I N A R Y   S E A R C H **!!
+
+-Binary search is a much faster form of search
+-Rather than eliminating one element at a time, you can eliminate half (binary) of the remaining elements at a time
+-Binary search only works for SORTED arrays, things in order.
+
+Find a midpoint. Is what you're searching for before or after the midpoint. Search that half.
+
+!!**  D I V I D E   A N D   C O N Q U E R  **!!
+
+common way to refer to binary search
+
+Pseudo code exercise, 8-10 lines
+
+- write a function that accepts a sorted array and a value
+- create a left pointer at the start of the array, and a right pointer at the end of the array
+- while the left pointer comes before the right pointer:
+    - create a pointer in the middle
+    - if you find the value you want, return that index
+    - if the value is too small, move the left pointer up
+    - if the value is too large, move the right pointer down
+- if you never find the value, return -1
+
+this is 16 lines of code, so despite it being right, it's probably wrong because of too many if statements
+it was wrong because you had middle inside the while loop!
+
+
+function binarySearch(arr, val) {
+    let left = 0
+    let right = arr.length - 1
+    while(left <= right) {
+        let mid = Math.floor((left + right) / 2)
+        if(arr[mid] === val) return mid
+        if(arr[right] === val) return right
+        if(arr[left] === val) return left
+        if(arr[mid] > val) {
+            right = mid - 1
+        }
+        if(arr[mid] < val) {
+            left = mid + 1
+        }
+    }
+    return -1
+}
+
+solution given by colt
+function binarySearch(arr, elem) {
+    let start = 0;
+    let end = arr.length - 1
+    while(start <= end) {
+        let middle = Math.floor((start + end) / 2)
+        if(arr[middle] === elem){
+            return middle
+        } else if(arr[middle] < elem) {
+            start = middle + 1
+        } else {
+            end = middle - 1
+        }
+    }
+    return -1
+}
+
+!!** B I N A R Y   S E A R C H **!!
+        !!** B I G   O **!!
+
+- Best case scenario O(1)
+- Worst & AVG case O(log n)

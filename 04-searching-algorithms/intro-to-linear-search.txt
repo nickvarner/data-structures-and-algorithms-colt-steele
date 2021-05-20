@@ -1,0 +1,32 @@
+!!** L I N E A R   S E A R C H **!!
+
+What it sounds like basically. You have a linear data structure like an array
+
+[5, 8, 1, 100, 12, 3, 12]
+
+If we're looking for 8, were going to check each index of the array and looks for 8
+
+create a function to search linearly. I'm going to give you pseudo code, and you create the function
+
+- The function accepts an array and a value
+- Loop through the array and check if the current array element is equal to the value
+- If it is found return the index at which the element is found
+- If it's not found, return -1
+
+This strongly resembles or mimics the functionality of the built in method indexOf
+
+function linearSearch(arr, val) {
+    for(let i = 0; i < arr.length; i++) {
+        if(arr[i] === val) {
+            return i
+        }
+    }
+    return -1
+}
+
+!!** L I N E A R   S E A R C H **!!
+        !!** B I G   O **!!
+
+- Best case scenario - O(1)
+- Average case scenario - O(n)
+- Worst case scenario - O(n)
