@@ -42,6 +42,100 @@ function compareByLength(str1, str2) {
 ["Steele", "Colt", "Data Structures", "Algorithms"].sort(compareByLength)
 returns ["Data Structures", "Algorithms", "Steele", "Colt"]
 
+!!** B U B B L E   S O R T **!!
+
+ a sorting algorithm where the largest values "bubbles" up to the top
+compare two values, whichever is larger, swap them
+
+ brings the largest value to the end of the array and starts again
+
+ how do we swap?
+
+ ES5 -- Not the newest way, but is colt's preferred way
+
+function swap (arr, idx1, idx2) {
+	// create a third variable to temporarily hold one, while you swap the other 2
+	let temp = arr[idx1];
+	//swap idx1 with idx2, now that idx1 is assigned to temp
+	arr[idx1] = arr[idx2];
+	//now assign idx2, idx1's val using the temp variable
+	arr[idx2] = temp;
+}
+
+ ES2015 -- New way using 2015, not quite as easy to understand but shorter
+const swap = (arr, idx1, idx2) => {
+	[ arr[idx1], arr[idx2] ] = [ arr[idx2], arr[idx1] ];
+};
+
+ bubblesort pseudocode
+ - start looping from the end of an array with a variable called i
+ - start an inner loop with a variable called j from the beginning until i - 1
+ - if arr[j] is greater than arr[J+1], swap those two values
+return the array
+
 What about time complexity?
 n^2
 nested loops are almost always n^2
+
+!!** S E L E C T I O N   S O R T **!!
+
+Similar to bubble sort, but instead of first placing large values into sorted position, it places small values into sorted position.
+
+select sort pseudocode
+- create a minimum variable, which will be the first item in the array
+- compare the value to the minimum value
+- if the new value is less than the minimum, then assign that value to minimum
+- at the end of the loop, move the minimum to the beginning (swap) and start again
+- note: the value you're storing is the index of that value, NOT the actual value
+
+when is selection sort better than bubble sort?
+- when you want to do less swapping. we store the lesser in a temp variable and swap at the very end of the loop.
+
+what about time complexity?
+O(n^2) again because it's a nested loop
+
+!!** I N S E R T I O N   S O R T **!!
+
+Builds up the sort by gradually creating a larger left half which is always sorted.
+
+Insertion Sort pseudocode
+
+- Start by picking the second element in the array
+- Compare the second element with the one before it and swap if necessary
+- Continue to the next elelment and if it is in the incorrect order, iterate through the sorted portion to place the element in the correct place.
+
+function insertionSort (arr) {
+	// start a for loop that begins with the second variable
+	for (let i = 1; i < arr.length; i++) {
+		// use currentVal as a temporary variable for arr[i]
+		let currentVal = arr[i];
+		// start another for loop that is going to look at the value in the array to the right of arr[i]
+		// the conditional statement is where it gets confusing, since were working backward from right to left
+		// we want it to continue only if were at an index above 0
+		// the for loop will also only continue to run IF the number in front of arr[i] is greater than the current value (arr[i] in first pass, then the currentVal in subsequent passes)
+		// so if the number in front of arr[i] is greater (first pass), we know it needs to move over
+		for (let j = i - 1; j >= 0 && arr[j] > currentVal; j--) {
+			//we take the number after arr[j] which comes after arr[i] and we swap that to arr[j]
+			//then we set arr[j] to the temporary variable currentVal
+			arr[j + 1] = arr[j];
+			arr[j] = currentVal;
+		}
+	}
+	return arr;
+}
+
+
+Time Complexity?
+Nested Loop = O(n^2)
+but if its sorted, its n(1)
+
+Let's Compare all 3
+
+ALGORITHM 		TIME COMPLEXITY 		TIME COMPLEXITY 		TIME COMPLEXITY  		SPACE COMPLEXITY
+					BEST 					AVG 					WORST 						
+
+BUBBLE 				 O(n)                     O(n^2)                O(n^2)                      O(1)
+
+INSERTION			O(n)	                  O(n^2)                O(n^2)                      O(1)
+
+SELECTION			O(n^2)	                  O(n^2)                O(n^2)                      O(1)
