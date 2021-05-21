@@ -41,3 +41,7 @@ function compareByLength(str1, str2) {
 
 ["Steele", "Colt", "Data Structures", "Algorithms"].sort(compareByLength)
 returns ["Data Structures", "Algorithms", "Steele", "Colt"]
+
+What about time complexity?
+n^2
+nested loops are almost always n^2
