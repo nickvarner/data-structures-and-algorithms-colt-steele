@@ -134,8 +134,8 @@ Let's Compare all 3
 ALGORITHM 		TIME COMPLEXITY 		TIME COMPLEXITY 		TIME COMPLEXITY  		SPACE COMPLEXITY
 					BEST 					AVG 					WORST 						
 
-BUBBLE 				 O(n)                     O(n^2)                O(n^2)                      O(1)
+BUBBLE 				 O(n)                  O(n^2)                   O(n^2)                      O(1)
 
-INSERTION			O(n)	                  O(n^2)                O(n^2)                      O(1)
+INSERTION			O(n)	               O(n^2)                   O(n^2)                      O(1)
 
-SELECTION			O(n^2)	                  O(n^2)                O(n^2)                      O(1)
+SELECTION			O(n^2)	               O(n^2)                   O(n^2)                      O(1)
