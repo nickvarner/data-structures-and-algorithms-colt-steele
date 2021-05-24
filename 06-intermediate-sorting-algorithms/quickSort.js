@@ -8,10 +8,10 @@
 // - Return the pivot index
 
 function pivot (arr, start = 0, end = arr.length - 1) {
-	let pivotIdx = arr[start];
+	let pivotVal = arr[start];
 	let swapIdx = start;
 	for (let i = start + 1; i < arr.length; i++) {
-		if (pivotIdx > arr[i]) {
+		if (pivotVal > arr[i]) {
 			swapIdx++;
 			[ arr[i], arr[swapIdx] ] = [ arr[swapIdx], arr[i] ];
 		}

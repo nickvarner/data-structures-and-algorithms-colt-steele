@@ -1,4 +1,6 @@
 the beginning sorting algorithms simply do not scale well
+you need to really understand the next few algorithms, but not necessarily know how to write them
+could you take what you learn from this and explain how they work on a white board? that's what you need to know how to do
 
 there is another family of algorithms that can improve time complexity from o(n^2) to O(n log n)
 however there is a tradeoff between efficiency and simplicity
@@ -64,4 +66,59 @@ Quicksort Pseudocode
 - When the helper returns to you the updated pivot index, recursively call the pivot helper on the subarray to the left of that index, and the subarray to the right of that index
 - Your base case occurs when you consider a subarray with less than 2 elements
 
+Time Complexity (best), Time Complexity(avg):
+O(n log n)
 
+Time Complexity (Worst):
+O(n^2)
+
+Space Complexity:
+O(n log n)
+
+!!** R A D I X   S O R T **!!
+
+all the algorithms so far are considered comparison algorithms meaning they compare two things 
+
+the first 3, we're all O(n^2) avg time complexity (think nested loops)
+
+the last two avg time complexity were o(n log (n))
+
+can we improve on this? sort of, but not by making comparisons
+
+Radix sort is a special sorting algorithms that works on lists of numbers
+It never makes comparisons between different elements
+It exploits the fact that information about the size of a number is determined by the amount of digits
+    aka, more digits means a bigger number
+
+How does it work?
+- Create 0-9 different buckets
+- group the numbers based on the digit on the far right and puts them in the correct bucket
+- the return them in an array in the same order we collected it
+- next we group them based on the second digit from the right
+- return the result again (keeping them in order)
+- next we do the third digit from right
+- continue doing this until you're out of digits
+
+Radix Sort Helper Methods
+In order to implement radix sort it is helpful to implement a few helper functions first
+the first one is getDigit
+
+function getDigit(num, place) - returns the digit in num at the given place value
+function digitCounter(num) - returns how many digits are in the number
+function mostDigits(nums) - when given an array of numbers returns the number of digits in the largest numbers in the list
+
+Radix Sort Pseudocode
+- Define a function that accepts a list of numbers
+- Figure out how many digits the largest number has
+- Start a loop from 0 up to k (largest number of digits)
+- For each iteration of the loop we need to:
+    - Create buckets for each digit (an array, with 10 subarrays)
+    - place each number in the correct bucket BASED on its kth digit
+- Replace our existing array with values in our buckets starting with 0 and continuing until 9 (use concat)
+- Return the list of numbers at the end 
+
+Time Complexity (best), Time Complexity (Worst), Time Complexity (avg):
+O(nk)
+
+Space Complexity: 
+O(n+k)
