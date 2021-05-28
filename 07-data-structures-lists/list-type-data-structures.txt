@@ -1,0 +1,13 @@
+Why care about data structures?
+
+The more time you spend as a developer, the more likely you'll need to use one of these data structures. 
+You've already worked with of them unknowingly.
+...and of course INTERVIEWS!
+
+!!** S I N G L Y   L I N K E D   L I S T S **!!
+
+A data structure that contains a head, tail and length property
+
+The head is the beginning and the tail is the end
+
+Consist of nodes and each node a value and a pointer to another node or null
