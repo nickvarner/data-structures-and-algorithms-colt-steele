@@ -150,24 +150,34 @@ class SinglyLinkedList {
 		this.length--;
 		return temp;
 	}
+	print () {
+		var arr = [];
+		var current = this.head;
+		while (current) {
+			arr.push(current.val);
+			current = current.next;
+		}
+		console.log(arr);
+	}
 	reverse () {
+		// create a variable called node and initialize it to the head property
 		// swap the head and the tail
 		// create a variable called next
 		// create a variable called previous
-		// create a variable called node and initialize it to the head property
 		// loop through the list
 		// set next to be the next property on wahtever node is
 		// set previous to be the value of the node variable
 		// set the node variable to be the value of the next variable
-		//
-		this.tail = this.head;
-		let next = undefined;
-		let prev = undefined;
 		let node = this.head;
+		this.head = this.tail;
+		this.tail = node;
+		let next;
+		let prev = null;
 		for (let i = 0; i < this.length; i++) {
 			next = node.next;
-			prev = node.val;
-			node = next.val;
+			node.next = prev;
+			prev = node;
+			node = next;
 		}
 	}
 }
