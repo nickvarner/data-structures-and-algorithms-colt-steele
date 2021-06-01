@@ -11,3 +11,27 @@ A data structure that contains a head, tail and length property
 The head is the beginning and the tail is the end
 
 Consist of nodes and each node a value and a pointer to another node or null
+
+BIG O of Singly Linked Lists
+
+Insertion - O(1)
+Removal - O(1) or O(n)
+Searching - O(n)
+Access - O(N)
+
+Singly linked lists are an excellent alternative to array when insertion and dletion at the beginning are frequently required.
+
+Arrays contain a built in index whereas Linked Lists do not
+
+The idea of a list data structure that consists of nodes i the foundation for other data structures like Stacks and Queues
+
+!!** D O U B L Y    L I N K E D   L I S T S **!!    
+
+Almost identical to Singly linked lists except every node has another pointer to the previous node.
+
+Big O of Doubly Linked Lists
+
+Insertion - O(1)
+Removal - O(1)
+Searching - O(N)
+Access - O(N)
