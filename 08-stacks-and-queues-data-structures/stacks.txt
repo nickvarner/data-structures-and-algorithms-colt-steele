@@ -1,0 +1,31 @@
+1) what is a stack?
+
+A LIFO data structure
+        LIFO ?? Last In, First out
+
+The last element added to the stack will be the first element removed from the stack
+
+How is it used?
+- Think about a stack of plates, or a stack of markers, or ..anything. As you pile it up the last thing is what gets removed first.
+
+How we'll visuailze a stack
+
+    ITS A SERIES OF NODES!
+
+        Last        SIZE = 4            First
+        10 <------ 2 <------ 22 <-------- 7
+
+We've seen this before! The Call stack!! Recursion!! Ring a bell???
+
+BIG O OF STACKS
+Insertion - O(1)
+Removal - O(1)
+Searching - O(N)
+Access - O(N)
+
+!!** R E C A P **!!
+
+- Stacks are a LIFO data structure where the last value in is always the first one out.
+- Stacks are used to handle function invocations (the call stack), for operations like undo/redo, and for routing (remember pages you have visited and go back/forward) and much more!
+- They are not a built in data structure in JavaScript but are relatively simple to implement
+

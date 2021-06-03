@@ -1,0 +1,12 @@
+!!** Q U E U E S !!**
+
+A FIFO DATA STRUCTURE 
+
+First In, First Out
+
+Queue's exist everywhere! Think about the last time you waited in line.. but what about programming?
+
+- Background Tasks
+- Uploading resources
+
+Looks very familiar to a stack (prop why they're taught together, no??)
