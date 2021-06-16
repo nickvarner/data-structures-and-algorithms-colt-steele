@@ -7,9 +7,24 @@ Two Ways:
 
 Breadth-first : working our way across the tree, from left to right
 
+Steps for Breadth-first implementation (iteratively)
+- Create a queue (first in, first out structure), which can be an array (queue means you'll be using push/shift array methods), and a variable to store the values of nodes visited
+- Place the root node in the queue
+- Loop as long as there is anything in the queue
+  - Dequeue a node from the queue and push the value of the node into the variable that stores the nodes
+  - If there is a left property on the node dequeued, add it to the queue
+  - If there is a right property on the node dequeued, and it to the queue
+- Return the variable that stores the values
+
+
 Depth-first : going from top to bottom
-  DFS - InOrder: 
+  DFS - PreOrder: Go all the way down the left side of the root
 
-  DFS - PreOrder:
+  DFS - PostOrder: Explore all children and add the root last
 
-  DFS - PostOrder:
+  DFS - InOrder: traverse the entire left side, visit the root, then traverse the entire right side
+
+
+  So, which is better Breadth-first search or Depth-first search?
+
+  - Well it depends on the tree. If its a large/wide tree you should use depth-first so there's fewer nodes to keep track of.
