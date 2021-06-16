@@ -1,0 +1,34 @@
+!!** BINARY SEARCH TREES **!!
+
+What is a tree?
+- A data structure that consists of nodes in a parent / child relationship.
+
+Tree Terminology
+Root - Top node in tree
+Child - a node directly connected to another node when moving away from the Root
+Parent - The converse notion of a child 
+Siblings - A group of nodes with the same parent
+Leaf - a node with no children
+Edge - the connection between one node and another
+
+Tree Uses
+- HTML DOM
+- Network Routing
+- Abstract Syntax Tree
+- Artificial Intelligence
+- Folder in Operating Systems
+- Computer File Systems
+- JSON
+
+Most Common Tree is a -- Binary Search Tree
+
+Rules for Binary Search TREES
+- every parent node has at most, two children
+- every node to the left of a parent node is always less than the parent (so its sorted, and we use numbers)
+- every node to the right of a parent node is always greater than the parent
+
+Big O of BST
+
+Insertion - O(log n)
+Searching - O(log n)
+

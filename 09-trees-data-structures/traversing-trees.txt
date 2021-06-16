@@ -1,0 +1,15 @@
+Traversing a Tree
+
+Two Ways:
+
+- Breadth-first Search
+- Depth-first Search
+
+Breadth-first : working our way across the tree, from left to right
+
+Depth-first : going from top to bottom
+  DFS - InOrder: 
+
+  DFS - PreOrder:
+
+  DFS - PostOrder:
