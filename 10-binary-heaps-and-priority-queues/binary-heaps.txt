@@ -17,3 +17,14 @@ They are also used quite a bit, with graph traversal algorithms.
 
 The procedure for deleting the root from the heap (effectively extracting the maximum element in a max-heap or the minimum element in a min-heap) 
 and restoring the properties is called down-heap (also known as bubble-down, sift-down, cascade-down, and extract-min/max)
+
+BIG O OF BINARY HEAPS
+
+Great at insertion and deletion
+
+Insertion - O(log n)
+Deletion - O(log n)
+
+Recap
+- Binary heaps are very useful data structures for sorting and implemeting other data structures like priority queues.
+- Binaryheaps are either MaxBinaryHeaps or MinBinaryHeaps with parents either being smaller or larger than their children.

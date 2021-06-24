@@ -50,6 +50,9 @@ class MaxBinaryHeap {
 		}
 	}
 	extractMax () {
+		if (this.values.length <= 0) {
+			return 'must have more than one value in the values heap';
+		}
 		// swap the first value in the values property with the last one
 		[ this.values[0], this.values[this.values.length - 1] ] = [
 			this.values[this.values.length - 1],
