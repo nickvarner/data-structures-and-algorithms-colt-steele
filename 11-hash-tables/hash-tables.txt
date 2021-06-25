@@ -19,3 +19,34 @@ Scala         Maps
 Ruby          Hashes
 
 *Objects have some restrictions, but are basically hash tables.
+
+hash tables give us human-readability and computer readability
+
+were going to reinvent the hashtable using an array.. for some reason
+
+in order to look up values by key, we need a way to convert keys in valid array indices.
+
+a function that performs this task is called a hash function
+
+What makes a good hash function?
+
+1. Fast (ie constant time)
+2. Doesn't cluster outputs at specific indices, but distributes uniformly
+3. Deterministic (same input yields the same output)
+
+Terrible Example(s)
+function slowHash(key) {
+  for(let i = 0; i < 10000; i++) {
+    console.log('every day im hasing')
+  }
+  return key[0].charCodeAt(0);
+}
+
+function sameHashedValue(key) {
+  return 0;
+}
+
+function randomHash(key) {
+  return Math.floor(Math.random() * 1000)
+}
+
