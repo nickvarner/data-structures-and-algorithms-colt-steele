@@ -1,0 +1,45 @@
+what are graphs?
+
+a graph data structure consists of a finite (and possibly mutable) set of vertices or nodes or points, together with a set of unordered pairs of these vertices
+for an undirected graph or a set of ordered pairs for a directed graph
+
+what?
+
+Nodes + Connections
+
+Uses for graphs
+- social networks
+- location / mapping
+- routing algorithms
+- visual heirarchy
+- fily system optimizations
+- everywhere
+
+essential graph terms
+vertex - node
+edge - connection between nodes
+weighted / unweighted - values assigned to distances between vertices
+directed / undirected - directions assigned to distances between vertices
+
+
+!!** big o**!!
+OPERATION         ADJACENT LIST    ADJANENCY MATRIX
+add vertex        O(1)             O(|V^2|)
+add edge          O(1)             O(1)
+remove vertex     O(|V| + |E|)     O(|V^2|)
+remove edge       O(|E|)           O(1)
+query             O(|V| + |E|)     O(1)
+storage           O(|V| + |E|)     O(|V^2|)
+
+|V| - number of vertices (nodes)
+|E| - number of edges (connections)
+
+adjanceny list
+- can take up less space (in sparse graphs)
+- faster to iterate over all edges
+- can be slower to lookup specific edge
+
+adjanceny matrix
+- takes up more space
+- slower to iterate over all edges
+- faster to lookup specific edge
