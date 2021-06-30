@@ -50,3 +50,25 @@ function randomHash(key) {
   return Math.floor(Math.random() * 1000)
 }
 
+!!** PRIME NUMBERS **!!
+
+The prime number in the hash is helpful in spreading out they keys more uniformly.
+It's also helpful if the array that you're putting values into has a prime length.
+
+You don't need to know why. (Math is complicated!)
+But here are some links if you're curious
+- 
+- 
+
+Dealing With Collisions
+
+Even with a large array and a great has funtion, collisions are inevitable.
+
+There are many strategies for dealing with collisions, but we'll focus on two.
+1) Separate Chaining - creating a nested array
+2) Linear Probing = search through the array to find the next empty slot
+
+BIG O OF HASH Tables
+Insertion    O(1)
+Deletion     O(1)
+Access       O(1)
