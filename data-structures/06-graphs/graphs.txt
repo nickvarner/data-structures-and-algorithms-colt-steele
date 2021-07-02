@@ -43,3 +43,23 @@ adjanceny matrix
 - takes up more space
 - slower to iterate over all edges
 - faster to lookup specific edge
+
+!!** graph traversal **!!
+its important to remember or document or write down which children you've already visited
+
+
+uses
+- peer to peer networking
+- web crawlers
+- finding closest
+  - matches/recommendations
+- shortest path problems
+  - gps navigation
+  - solving mazes
+  - ai (shortest path to win game)
+
+
+depth first graph traversal
+  - explore as far as possible down on branch before 'backtracking'
+
+breadth first graph traversal
