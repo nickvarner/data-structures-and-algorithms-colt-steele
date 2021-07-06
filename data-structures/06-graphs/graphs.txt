@@ -12,7 +12,7 @@ Uses for graphs
 - location / mapping
 - routing algorithms
 - visual heirarchy
-- fily system optimizations
+- file system optimizations
 - everywhere
 
 essential graph terms

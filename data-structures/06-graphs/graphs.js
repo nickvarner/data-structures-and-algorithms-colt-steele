@@ -1,6 +1,3 @@
-// were going to use an adjacency list for our graphs section
-// and an undirected graph
-
 class Graph {
 	constructor () {
 		this.adjacencyList = {};
@@ -30,7 +27,7 @@ class Graph {
 		}
 		delete this.adjacencyList[vertex];
 	}
-	DFS (vertex) {
+	DFSrecursive (vertex) {
 		// recursive
 		// create a list to store the end result, to be returned at the very end
 		const results = [];
@@ -54,6 +51,70 @@ class Graph {
 		}
 		depthFirst(vertex);
 		return results;
+	}
+	DFSiterative (vertex) {
+		// the function should accept a starting node
+		// create a stack to help use keep track of vertices (use a list/array)
+		// create a list to store the end result, to be returned at the very end
+		// create an object to store visited vertices
+		let stack = [ vertex ];
+		let results = [];
+		let visited = {};
+		let currentVertex;
+		// add the starting vertex to the stack, and mark it visited
+		visited[vertex] = true;
+		// while the stak has something in it:
+		while (stack.length) {
+			console.log(stack);
+			console.log(visited);
+			console.log(vertex);
+			// pop the next vertex from the stack
+			currentVertex = stack.pop();
+			// add it to the result list
+			results.push(currentVertex);
+
+			// push all of its neighbors into the stack
+			for (let neighbor of this.adjacencyList[currentVertex]) {
+				// if that vertex hasn't been visited yet
+				if (!visited[neighbor]) {
+					// mark it as visited
+					visited[neighbor] = true;
+					// add it to the stack
+					stack.push(neighbor);
+				}
+			}
+		}
+		// return the results array
+		return results;
+	}
+	BDF (vertex) {
+		// should accept a starting vertex
+		// create a queue (array) place the starting vertex in it
+		// create a result array to store the nodes visited
+		// create an object to store nodes visited
+		const adjacencyList = this.adjacencyList;
+		const queue = [ vertex ];
+		const result = [];
+		const visited = {};
+		let currentVertex;
+		// mark the starting vertex as visited
+		visited[vertex] = true;
+		// loop as long as there is anything in the queue
+		while (queue.length) {
+			// remove the first vertex from the queue and push it into the array that stores nodes visited
+			currentVertex = queue.shift();
+			result.push(currentVertex);
+			// loop over each vertex in the adjaceny list for the vertex you are visiting
+			adjacencyList[currentVertex].forEach((neighbor) => {
+				// if its not inside the object that stores nodes visited, mark it as visisted and enqueue that vertex
+				if (!visited[neighbor]) {
+					visited[neighbor] = true;
+					queue.push(neighbor);
+				}
+			});
+		}
+		// once the loop finished looping, return the array of visited nodes
+		return result;
 	}
 }
 
