@@ -65,9 +65,6 @@ class Graph {
 		visited[vertex] = true;
 		// while the stak has something in it:
 		while (stack.length) {
-			console.log(stack);
-			console.log(visited);
-			console.log(vertex);
 			// pop the next vertex from the stack
 			currentVertex = stack.pop();
 			// add it to the result list
