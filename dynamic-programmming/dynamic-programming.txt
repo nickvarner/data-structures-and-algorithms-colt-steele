@@ -1,0 +1,40 @@
+In order to truly understand dynamic programming you need to understand and get recursion.
+
+what is dynamic programming?
+
+    a method for solving a complex problem by breaking it down into a colllection of simpler subproblems, solving each of those subproblems just once, and storing their solutions
+    it only works on problems with optimal substructure and overlapping subproblems
+
+what are overlapping subproblems?
+
+    a problem is said to have overlapping subproblems if it can be broken down into subproblems which are reused several times
+
+what is optimal substructure?
+
+    a problem is said to have optimal substructure if an optimal solution can be constructed from optimal solutions of its subproblems
+
+examples:
+
+FIBONACCI SEQUENCE
+"every number after the first two is the sum of the two preceding ones"
+
+1 + 1 = 2
+1 + 2 = 3
+2 + 3 = 5
+5 + 3 = 8
+8 + 5 = 13
+13 + 8 = 21
+
+what if we want fib(5) -> the fifth number in fibonacci sequence
+
+TOP
+fib(5) = fib(4) + fib(3)
+
+fib(3) = fib(2) + fib(1)
+fib(4) = fib(3) + fib(2)
+
+fib(2) + fib(1) = fib(3)
+fib(3) + fib(2) = fib(4)
+
+coming up with fib(3) is overlapping because we do it more than once
+
