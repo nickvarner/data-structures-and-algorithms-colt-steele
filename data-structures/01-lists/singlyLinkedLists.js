@@ -18,7 +18,7 @@ class SinglyLinkedList {
 		// should accept a new value
 		// create a new node using the value passed to the function
 		// if there is no head property, then set both the head and tail to be the newly created node
-		// otherwise set the property on the tail to be the new node and set the tail property on the list to be the newly created node
+		// otherwise set the next property on the tail to be the new node and set the tail property on the list to be the newly created node
 		// increase the length
 		// return the list
 		let newNode = new Node(val);
@@ -33,13 +33,16 @@ class SinglyLinkedList {
 		return this;
 	}
 	pop () {
-		// if there are no nodes in the leist, return undefined
+		// if there are no nodes in the list, return undefined
+		// set up two variables, a current variable pointing to the head
+		// then another variable called newTail that points to current
 		// loop through the entire list until you reach the tail
+		// so while current.next is truthy, reassign newTail to current
+		// and current to be the next node (to continue moving thru the list)
+		// after the end of the loop set the tail to be newTail (which will be current)
 		// set the next property of the second to last node to be null
-		// set the tail to be the 2nd to last node
 		// decrement the list by 1
 		// return the value of the node removed
-		//
 		if (!this.head) {
 			return undefined;
 		}
